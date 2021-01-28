@@ -1,0 +1,67 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#TopBar{
+	height: 100px;
+	/*height: auto;*/
+	width: 100%;
+	color: white;
+	background-color: blue;
+}
+
+#BotBar{
+	height: 80px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	background-color: blue;
+}
+
+#GameArea{
+	height: 250px;
+	width: 100%;
+
+}
+
+.TabBox{
+	padding-top: 5px;
+	height: 400px;
+	width: 100%;
+
+}
+.GenericProgressBarDiv{
+	height: 50px;
+}
+.GenericProgressBar{
+	background-color: blue;
+}
+
+#MineProgressBar{
+	background-color: red;
+}
+#ForgeProgressBar{
+	background-color: red;
+}
+#ComponentsProgressBar{
+	background-color: red;
+}
+#ComputersProgressBar{
+	background-color: red;
+}
+#ProgressBar{
+	
+}
+
+
+
+#MineBtnDiv{
+	padding: 5px;
+}
+.UpgradeWorkBtns{
+	height: 50px;
+
+}
+
+

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="css/stylesheetcf.css">
+		<title>Game</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<!-- Top bar -->
+			<div id="TopBar">
+				<div class="row">
+					<div class="col-3">
+						<h4>This is a Game</h4>
+					</div>
+					<div class="col-3">
+						<h5 id="PlayerMoneyH">Money: x</h5>
+					</div>
+					<div class="col-6">
+						<button onclick="GameApp.RunFirstTime();">InitValues</button>
+						Buttons go here and here and here and here and here 
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-3">
+						<h5>Rocks:</h5>
+						<h5 id="TotalRocksValue">1,000,000,000</h5>
+					</div>
+					<div class="col-3">
+						<h5>Metal:</h5>
+						<h5 id="TotalMetalValue">1,000,000,000</h5>
+					</div>
+					<div class="col-3">
+						<h5>Pc Parts:</h5>
+						<h5 id="TotalPartsValue">1,000,000,000</h5>
+					</div>
+					<div class="col-3">
+						<h5>Computers:</h5>
+						<h5 id="TotalComputersValue">1,000,000,000</h5>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<!-- GameScreen, might be canvas -->
+			<div class="row">
+				<div class="col-12">
+					<div id="GameArea">
+						asdfasdf
+					</div>
+				</div>
+			</div>
+			<!-- Game Tabs and functionality -->
+			<div class="row">
+				<div class="col-12">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#HomeTab">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" data-toggle="tab" href="#MineTab">Mine</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#ForgeTab">Forge</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#ComponentsTab">Components</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#ComputersTab">Computers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#PotatoTab">Potato</a>
+						</li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane TabBox container-fluid fade" id="HomeTab">
+							Home Content
+						</div>
+						<!-- MINE -->
+						<div class="tab-pane TabBox container-fluid active" id="MineTab">
+							<div class="row">
+								<div class="col-4">
+									<h3>Mine Productivity: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="MineProductivityValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<h3>Workers in Mine: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="MineWorkerValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4 px-2">
+									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="MineProgressBarDiv">
+										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="MineProgressBar">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="MineBtnDiv">
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineWorkBtn" onclick="FactoryInterface.Work(MineFactory);">Work</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineUpgradeBtn" onclick="FactoryInterface.Upgrade(MineFactory);">Upgrade Mine (x1)</button>
+									</div>
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineUpgrade5Btn" onclick="FactoryInterface.Upgrade5(MineFactory);">Upgrade Mine (x5)</button>
+									</div>
+									<div class="col-6 m-0">
+										<h5 class="m-0" id="MineUpgrade1H">Mine Upgrade Cost(x1): 0</h5>
+										<h5 class="m-0" id="MineUpgrade5H">Mine Upgrade Cost(x5): 0</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineAutoBtn" onclick="FactoryInterface.ActivateAutoWork(MineFactory);">Auto-Mine</button>
+									</div>
+									<div class="col-6">
+										<h5 id="MineAutoWorkH">Auto-Mine Upgrade Cost: 0</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellProduct(MineFactory);">Sell Products</button>
+									</div>
+									<div class="col-6">
+										<h5 id="SellRocks">Value of Rocks: 1</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- FORGE -->
+						<div class="tab-pane TabBox container-fluid fade" id="ForgeTab">
+							<div class="row">
+								<div class="col-4">
+									<h3>Forge Productivity: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="Forge*ProductivityValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<h3>Workers in Forge: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="ForgeWorkerValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4 px-2">
+									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ForgeProgressBarDiv">
+										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ForgeProgressBar">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="ForgeBtnDiv">
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeWorkBtn">Work</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgradeBtn">Upgrade Forge (x1)</button>
+									</div>
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgrade5Btn">Upgrade Forge (x5)</button>
+									</div>
+									<div class="col-6 m-0">
+										<h5 class="m-0">Forge Upgrade Cost(x1): 0</h5>
+										<h5 class="m-0">Forge Upgrade Cost(x5): 0</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeAutoBtn">Auto-Forge</button>
+									</div>
+									<div class="col-6">
+										<h5>Auto-Forge Upgrade Cost: 0</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- COMPONENTS -->
+						<div class="tab-pane TabBox container-fluid fade" id="ComponentsTab">
+							<div class="row">
+								<div class="col-4">
+									<h3>Components Productivity: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="ComponentsProductivityValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<h3>Workers in Components: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="ComponentsWorkerValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4 px-2">
+									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ComponentsProgressBarDiv">
+										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ComponentsProgressBar">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="ComponentsBtnDiv">
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsWorkBtn">Work</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgradeBtn">Upgrade Components (x1)</button>
+									</div>
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgrade5Btn">Upgrade Components (x5)</button>
+									</div>
+									<div class="col-6 m-0">
+										<h5 class="m-0">Components Upgrade Cost(x1): 0</h5>
+										<h5 class="m-0">Components Upgrade Cost(x5): 0</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsAutoBtn">Auto-Components</button>
+									</div>
+									<div class="col-6">
+										<h5>Auto-Components Upgrade Cost: 0</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- COMPUTERS -->
+						<div class="tab-pane TabBox container-fluid fade" id="ComputersTab">
+							<div class="row">
+								<div class="col-4">
+									<h3>Computers Productivity: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="ComputersProductivityValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+									<h3>Workers in Computers: </h3>
+								</div>
+								<div class="col-4">
+									<h3 id="ComputersWorkerValue">0</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4 px-2">
+									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ComputersProgressBarDiv">
+										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ComputersProgressBar">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="ComputersBtnDiv">
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersWorkBtn">Work</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgradeBtn">Upgrade Computers (x1)</button>
+									</div>
+									<div class="col-2 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgrade5Btn">Upgrade Computers (x5)</button>
+									</div>
+									<div class="col-6 m-0">
+										<h5 class="m-0">Computers Upgrade Cost(x1): 0</h5>
+										<h5 class="m-0">Computers Upgrade Cost(x5): 0</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 p-1">
+										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersAutoBtn">Auto-Computers</button>
+									</div>
+									<div class="col-6">
+										<h5>Auto-Computers Upgrade Cost: 0</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- GOLDEN POTATO -->
+						<div class="tab-pane TabBox container-fluid fade" id="PotatoTab">
+							<!-- Get the Golden Potato -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Bottom Bar -->
+			<div class="row">
+				<div class="col-12">
+					<div id="BotBar">
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- Script Loads -->
+		<script src="js/Player.js"></script>
+		<script src="js/MineFactory.js"></script>
+		<script src="js/ForgeFactory.js"></script>
+		<script src="js/ComponentsFactory.js"></script>
+		<script src="js/ComputersFactory.js"></script>
+
+		<script src="js/FactoryInterface.js"></script>
+
+
+		<script src="js/GameDisp.js"></script>
+
+		<script src="js/app.js"></script>
+	</body>
+</html>
