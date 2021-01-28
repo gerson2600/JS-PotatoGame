@@ -93,7 +93,7 @@ var FactoryInterface = {
 		}
 	},
 
-	SellProduct : function (Factory)
+	SellAllProduct : function (Factory)
 	{
 		if (Factory.ProductQuant>0)
 		{
