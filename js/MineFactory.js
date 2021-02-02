@@ -1,7 +1,11 @@
 var MineFactory = {
 	Name : "Mine",
 	Product : "Rocks",
-	Unlocked : true,
+	Unlocked : false,
+	UnlockCost : 10,
+	DivLocked : document.getElementById('MineLocked'),
+	DivUnlocked : document.getElementById('MineUnlocked'),
+
 
 	ProductQuant : 12345,
 	ProductValue : 1,

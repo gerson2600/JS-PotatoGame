@@ -23,7 +23,7 @@
 					</div>
 					<div class="col-6">
 						<button onclick="GameApp.RunFirstTime();">InitValues</button>
-						Buttons go here and here and here and here and here 
+						Buttons go here and here and here and here and here
 					</div>
 				</div>
 				<div class="row">
@@ -83,255 +83,295 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div class="tab-pane TabBox container-fluid fade" id="HomeTab">
-							Home Content
+							<div class="row" id="HomeContent1">
+								Home Content Pre-unlock
+								<button onclick="GameDisp.ToggleHomeUnlock();">Button to Unlock</button>
+							</div>
+							<div class="row HiddenRow" id="HomeContent2">
+								Home Content Unlocked
+							</div>
+							
 						</div>
 						<!-- MINE -->
 						<div class="tab-pane TabBox container-fluid active" id="MineTab">
 							<div class="row">
-								<div class="col-4">
-									<h3>Mine Productivity: </h3>
-								</div>
-								<div class="col-4">
-									<h3 id="MineProductivityValue">0</h3>
+								<div class="col-6 offset-3" id="MineLocked">
+									<button onclick="FactoryInterface.Unlock(MineFactory);">Unlock Mine</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-4">
-									<h3>Workers in Mine: </h3>
+							<div class="HiddenRow" id="MineUnlocked">
+								<div class="row">
+									<div class="col-4">
+										<h3>Mine Productivity: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="MineProductivityValue">0</h3>
+									</div>
 								</div>
-								<div class="col-4">
-									<h3 id="MineWorkerValue">0</h3>
+								<div class="row">
+									<div class="col-4">
+										<h3>Workers in Mine: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="MineWorkerValue">0</h3>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-4 px-2">
-									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="MineProgressBarDiv">
-										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="MineProgressBar">
+								<div class="row">
+									<div class="col-4 px-2">
+										<div class="progress progress-bar-striped active GenericProgressBarDiv" id="MineProgressBarDiv">
+											<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="MineProgressBar">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="MineBtnDiv">
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineWorkBtn" onclick="FactoryInterface.Work(MineFactory);">Work</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineUpgradeBtn" onclick="FactoryInterface.Upgrade(MineFactory);">Upgrade Mine (x1)</button>
+										</div>
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineUpgrade5Btn" onclick="FactoryInterface.Upgrade5(MineFactory);">Upgrade Mine (x5)</button>
+										</div>
+										<div class="col-6 m-0">
+											<h5 class="m-0" id="MineUpgrade1H">Mine Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0" id="MineUpgrade5H">Mine Upgrade Cost(x5): 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineAutoBtn" onclick="FactoryInterface.ActivateAutoWork(MineFactory);">Auto-Mine</button>
+										</div>
+										<div class="col-6">
+											<h5 id="MineAutoWorkH">Auto-Mine Upgrade Cost: 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(MineFactory);">Sell Products</button>
+										</div>
+										<div class="col-6">
+											<h5 id="SellRocks">Value of Rocks: 1</h5>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div id="MineBtnDiv">
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineWorkBtn" onclick="FactoryInterface.Work(MineFactory);">Work</button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineUpgradeBtn" onclick="FactoryInterface.Upgrade(MineFactory);">Upgrade Mine (x1)</button>
-									</div>
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineUpgrade5Btn" onclick="FactoryInterface.Upgrade5(MineFactory);">Upgrade Mine (x5)</button>
-									</div>
-									<div class="col-6 m-0">
-										<h5 class="m-0" id="MineUpgrade1H">Mine Upgrade Cost(x1): 0</h5>
-										<h5 class="m-0" id="MineUpgrade5H">Mine Upgrade Cost(x5): 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="MineAutoBtn" onclick="FactoryInterface.ActivateAutoWork(MineFactory);">Auto-Mine</button>
-									</div>
-									<div class="col-6">
-										<h5 id="MineAutoWorkH">Auto-Mine Upgrade Cost: 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(MineFactory);">Sell Products</button>
-									</div>
-									<div class="col-6">
-										<h5 id="SellRocks">Value of Rocks: 1</h5>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 						<!-- FORGE -->
 						<div class="tab-pane TabBox container-fluid fade" id="ForgeTab">
 							<div class="row">
-								<div class="col-4">
-									<h3>Forge Productivity: </h3>
-								</div>
-								<div class="col-4">
-									<h3 id="Forge*ProductivityValue">0</h3>
+								<div class="col-6 offset-3" id="ForgeLocked">
+									<button onclick="FactoryInterface.Unlock(ForgeFactory);">Unlock Forge</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-4">
-									<h3>Workers in Forge: </h3>
+							<div class="HiddenRow" id="ForgeUnlocked">
+								<!-- Forge goes here-->
+								<div class="row">
+									<div class="col-4">
+										<h3>Forge Productivity: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="Forge*ProductivityValue">0</h3>
+									</div>
 								</div>
-								<div class="col-4">
-									<h3 id="ForgeWorkerValue">0</h3>
+								<div class="row">
+									<div class="col-4">
+										<h3>Workers in Forge: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="ForgeWorkerValue">0</h3>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-4 px-2">
-									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ForgeProgressBarDiv">
-										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ForgeProgressBar">
+								<div class="row">
+									<div class="col-4 px-2">
+										<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ForgeProgressBarDiv">
+											<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ForgeProgressBar">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="ForgeBtnDiv">
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeWorkBtn" onclick="FactoryInterface.Work(ForgeFactory);">Work</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgradeBtn"  onclick="FactoryInterface.Upgrade(ForgeFactory);">Upgrade Forge (x1)</button>
+										</div>
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgrade5Btn" onclick="FactoryInterface.Upgrade5(ForgeFactory);">Upgrade Forge (x5)</button>
+										</div>
+										<div class="col-6 m-0">
+											<h5 class="m-0">Forge Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0">Forge Upgrade Cost(x5): 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeAutoBtn" onclick="FactoryInterface.ActivateAutoWork(ForgeFactory);">Auto-Forge</button>
+										</div>
+										<div class="col-6">
+											<h5>Auto-Forge Upgrade Cost: 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ForgeFactory);">Sell Products</button>
+										</div>
+										<div class="col-6">
+											<h5 id="SellMetal">Value of Metal: 1</h5>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div id="ForgeBtnDiv">
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeWorkBtn">Work</button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgradeBtn">Upgrade Forge (x1)</button>
-									</div>
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgrade5Btn">Upgrade Forge (x5)</button>
-									</div>
-									<div class="col-6 m-0">
-										<h5 class="m-0">Forge Upgrade Cost(x1): 0</h5>
-										<h5 class="m-0">Forge Upgrade Cost(x5): 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeAutoBtn">Auto-Forge</button>
-									</div>
-									<div class="col-6">
-										<h5>Auto-Forge Upgrade Cost: 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ForgeFactory);">Sell Products</button>
-									</div>
-									<div class="col-6">
-										<h5 id="SellMetal">Value of Metal: 1</h5>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 						<!-- COMPONENTS -->
 						<div class="tab-pane TabBox container-fluid fade" id="ComponentsTab">
 							<div class="row">
-								<div class="col-4">
-									<h3>Components Productivity: </h3>
-								</div>
-								<div class="col-4">
-									<h3 id="ComponentsProductivityValue">0</h3>
+								<div class="col-6 offset-3" id="ComponentsLocked">
+									<button onclick="FactoryInterface.Unlock(ComponentsFactory);">Unlock Components</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-4">
-									<h3>Workers in Components: </h3>
+							<div class="HiddenRow" id="ComponentsUnlocked">
+								<div class="row">
+									<div class="col-4">
+										<h3>Components Productivity: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="ComponentsProductivityValue">0</h3>
+									</div>
 								</div>
-								<div class="col-4">
-									<h3 id="ComponentsWorkerValue">0</h3>
+								<div class="row">
+									<div class="col-4">
+										<h3>Workers in Components: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="ComponentsWorkerValue">0</h3>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-4 px-2">
-									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ComponentsProgressBarDiv">
-										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ComponentsProgressBar">
+								<div class="row">
+									<div class="col-4 px-2">
+										<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ComponentsProgressBarDiv">
+											<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ComponentsProgressBar">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="ComponentsBtnDiv">
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsWorkBtn" onclick="FactoryInterface.Work(ComponentsFactory);">Work</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgradeBtn" onclick="FactoryInterface.Upgrade(ComponentsFactory);">Upgrade Components (x1)</button>
+										</div>
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgrade5Btn" onclick="FactoryInterface.Upgrade5(ComponentsFactory);">Upgrade Components (x5)</button>
+										</div>
+										<div class="col-6 m-0">
+											<h5 class="m-0">Components Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0">Components Upgrade Cost(x5): 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsAutoBtn" onclick="FactoryInterface.ActivateAutoWork(ComponentsFactory);">Auto-Components</button>
+										</div>
+										<div class="col-6">
+											<h5>Auto-Components Upgrade Cost: 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ComponentsFactory);">Sell Products</button>
+										</div>
+										<div class="col-6">
+											<h5 id="SellParts">Value of Parts: 1</h5>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div id="ComponentsBtnDiv">
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsWorkBtn">Work</button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgradeBtn">Upgrade Components (x1)</button>
-									</div>
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgrade5Btn">Upgrade Components (x5)</button>
-									</div>
-									<div class="col-6 m-0">
-										<h5 class="m-0">Components Upgrade Cost(x1): 0</h5>
-										<h5 class="m-0">Components Upgrade Cost(x5): 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsAutoBtn">Auto-Components</button>
-									</div>
-									<div class="col-6">
-										<h5>Auto-Components Upgrade Cost: 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ComponentsFactory);">Sell Products</button>
-									</div>
-									<div class="col-6">
-										<h5 id="SellParts">Value of Parts: 1</h5>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 						<!-- COMPUTERS -->
 						<div class="tab-pane TabBox container-fluid fade" id="ComputersTab">
 							<div class="row">
-								<div class="col-4">
-									<h3>Computers Productivity: </h3>
-								</div>
-								<div class="col-4">
-									<h3 id="ComputersProductivityValue">0</h3>
+								<div class="col-6 offset-3" id="ComputersLocked">
+									<button onclick="FactoryInterface.Unlock(ComputersFactory);">Unlock Computers</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-4">
-									<h3>Workers in Computers: </h3>
+							<div class="HiddenRow" id="ComputersUnlocked">
+								<div class="row">
+									<div class="col-4">
+										<h3>Computers Productivity: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="ComputersProductivityValue">0</h3>
+									</div>
 								</div>
-								<div class="col-4">
-									<h3 id="ComputersWorkerValue">0</h3>
+								<div class="row">
+									<div class="col-4">
+										<h3>Workers in Computers: </h3>
+									</div>
+									<div class="col-4">
+										<h3 id="ComputersWorkerValue">0</h3>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-4 px-2">
-									<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ComputersProgressBarDiv">
-										<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ComputersProgressBar">
+								<div class="row">
+									<div class="col-4 px-2">
+										<div class="progress progress-bar-striped active GenericProgressBarDiv" id="ComputersProgressBarDiv">
+											<div class=" d-block progress-bar progress-bar-striped GenericProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%" id="ComputersProgressBar">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="ComputersBtnDiv">
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersWorkBtn" onclick="FactoryInterface.Work(ComputersFactory);">Work</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgradeBtn" onclick="FactoryInterface.Upgrade(ComputersFactory);">Upgrade Computers (x1)</button>
+										</div>
+										<div class="col-2 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgrade5Btn" onclick="FactoryInterface.Upgrade5(ComputersFactory);">Upgrade Computers (x5)</button>
+										</div>
+										<div class="col-6 m-0">
+											<h5 class="m-0">Computers Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0">Computers Upgrade Cost(x5): 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersAutoBtn"  onclick="FactoryInterface.ActivateAutoWork(ComputersFactory);">Auto-Computers</button>
+										</div>
+										<div class="col-6">
+											<h5>Auto-Computers Upgrade Cost: 0</h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-4 p-1">
+											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ComputersFactory);">Sell Products</button>
+										</div>
+										<div class="col-6">
+											<h5 id="SellComputers">Value of Computers: 1</h5>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div id="ComputersBtnDiv">
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersWorkBtn">Work</button>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgradeBtn">Upgrade Computers (x1)</button>
-									</div>
-									<div class="col-2 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgrade5Btn">Upgrade Computers (x5)</button>
-									</div>
-									<div class="col-6 m-0">
-										<h5 class="m-0">Computers Upgrade Cost(x1): 0</h5>
-										<h5 class="m-0">Computers Upgrade Cost(x5): 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersAutoBtn">Auto-Computers</button>
-									</div>
-									<div class="col-6">
-										<h5>Auto-Computers Upgrade Cost: 0</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-4 p-1">
-										<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ComputersFactory);">Sell Products</button>
-									</div>
-									<div class="col-6">
-										<h5 id="SellComputers">Value of Computers: 1</h5>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 						<!-- GOLDEN POTATO -->
 						<div class="tab-pane TabBox container-fluid fade" id="PotatoTab">
@@ -356,12 +396,8 @@
 		<script src="js/ForgeFactory.js"></script>
 		<script src="js/ComponentsFactory.js"></script>
 		<script src="js/ComputersFactory.js"></script>
-
 		<script src="js/FactoryInterface.js"></script>
-
-
 		<script src="js/GameDisp.js"></script>
-
 		<script src="js/app.js"></script>
 	</body>
 </html>

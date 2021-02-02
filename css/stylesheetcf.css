@@ -24,6 +24,9 @@ body{
 	width: 100%;
 
 }
+.HiddenRow{
+	display: none;
+}
 
 .TabBox{
 	padding-top: 5px;

@@ -1,7 +1,10 @@
 var ForgeFactory = {
 	Name : "Forge",
 	Product : "Rocks",
-	Unlocked : true,
+	Unlocked : false,
+	UnlockCost : 10,
+	DivLocked : document.getElementById('ForgeLocked'),
+	DivUnlocked : document.getElementById('ForgeUnlocked'),
 
 	ProductQuant : 12345,
 	ProductValue : 1,

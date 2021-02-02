@@ -50,4 +50,17 @@ var GameDisp = {
 	{
 		Factory.ProductOutputID.innerHTML = Factory.ProductQuant;
 	},
+
+	UnlockFactory : function (Factory)
+	{
+		Factory.DivLocked.classList.add('HiddenRow');
+		Factory.DivUnlocked.classList.remove('HiddenRow');
+	},
+
+	ToggleHomeUnlock : function ()
+	{
+		document.getElementById('HomeContent1').classList.add('HiddenRow');
+		document.getElementById('HomeContent2').classList.remove('HiddenRow');
+	},
+
 }

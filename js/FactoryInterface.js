@@ -4,6 +4,17 @@ var FactoryInterface = {
 		
 	},
 
+	Unlock : function (Factory)
+	{
+		if (Player.Money >= Factory.UnlockCost && Factory.Unlocked == false)
+		{
+			Player.Money -= Factory.UnlockCost;
+			GameDisp.UpdatePlayerMoney();
+			GameDisp.UnlockFactory(Factory);
+
+		}
+	},
+
 	Work : function (Factory) 
 	{
 		//Run progress bar and at end, add productivity value to total product
@@ -43,6 +54,7 @@ var FactoryInterface = {
 		if (Player.Money >= Factory.AutoWorkCost)
 		{
 			Player.Money -= Factory.AutoWorkCost;
+			GameDisp.UpdatePlayerMoney();
 			Factory.IsWorking = true;
 			Factory.AutoWork = true;
 			Factory.StartAutoWork();
@@ -104,6 +116,12 @@ var FactoryInterface = {
 
 
 		}
+	},
+
+	SellEverything : function ()
+	{
+		//Check for factory enabled at every factory and then sell all products, one at a time
+		//Update player money before leaving func
 	}
 
 

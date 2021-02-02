@@ -1,7 +1,10 @@
 var ComponentsFactory = {
 	Name : "Components",
 	Product : "Parts",
-	Unlocked : true,
+	Unlocked : false,
+	UnlockCost : 10,
+	DivLocked : document.getElementById('ComponentsLocked'),
+	DivUnlocked : document.getElementById('ComponentsUnlocked'),
 
 	ProductQuant : 12345,
 	ProductValue : 1,
