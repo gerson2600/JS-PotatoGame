@@ -32,7 +32,7 @@ var ComputersFactory = {
 	UpgradeCost : 30000,
 	UpgradeCostID : document.getElementById('ComputersUpgrade1H'),
 
-	Upgrade5Cost : 15000,
+	Upgrade5Cost : 150000,
 	Upgrade5CostID : document.getElementById('ComputersUpgrade5H'),
 
 	AutoWork : false,

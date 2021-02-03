@@ -48,14 +48,14 @@ var FactoryInterface = {
 			}
 		}else if (Factory.ProductRequirementCost <= Factory.ProductRequirementFactory.ProductQuant)
 		{
-			console.log(Factory.ProductRequirementFactory.ProductQuant);
-			Factory.ProductRequirementFactory.ProductQuant -= Factory.ProductRequirementCost;
-			GameDisp.UpdateProductQuant(Factory.ProductRequirementFactory);
-
 			if (!Factory.IsWorking )
 			{
 				console.log('Normal Factory Work B')
 				Factory.IsWorking = true;
+
+				console.log(Factory.ProductRequirementFactory.ProductQuant);
+				Factory.ProductRequirementFactory.ProductQuant -= Factory.ProductRequirementCost;
+				GameDisp.UpdateProductQuant(Factory.ProductRequirementFactory);
 
 				Factory.ProgressBar.classList.add('active');
 				Factory.ProgressBar.classList.add('bg-primary');
@@ -74,6 +74,9 @@ var FactoryInterface = {
 				}, Factory.WorkTime);
 			}else if (Factory.IsWorking && Factory.AutoWork)
 			{
+				console.log(Factory.ProductRequirementFactory.ProductQuant);
+				Factory.ProductRequirementFactory.ProductQuant -= Factory.ProductRequirementCost;
+				GameDisp.UpdateProductQuant(Factory.ProductRequirementFactory);
 				console.log('AutoWork B-' + Factory.Name);
 				Factory.ProductQuant += Factory.Productivity;
 				GameDisp.UpdateProductQuant(Factory);

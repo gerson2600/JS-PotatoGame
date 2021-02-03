@@ -15,6 +15,12 @@ var GameApp = {
 		GameDisp.InitPlayer();
 		GameDisp.InitFactories();
 	},
+
+	GiveLotsOfMoney : function ()
+	{
+		Player.Money += 100000;
+		GameDisp.UpdatePlayerMoney();
+	}
 	
 
 
