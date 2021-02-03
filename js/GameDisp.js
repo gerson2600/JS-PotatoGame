@@ -5,12 +5,42 @@ var GameDisp = {
 		console.log(Player.Money);
 		Player.MoneyID.innerHTML = "Money: " + Player.Money;
 	},
+	InitFactories : function ()
+	{
+		//Mine Init
+		console.log('Init Mine Factory.');
+		this.InitialFactoryValues(MineFactory);
+		this.UpdateProductQuant(MineFactory);
+		this.UpdateAllProductQuant(MineFactory);
+		//Forge Init
+		console.log('Init Forge Factory.');
+		this.InitialFactoryValues(ForgeFactory);
+		this.UpdateProductQuant(ForgeFactory);
+		this.UpdateAllProductQuant(ForgeFactory);
+		//Components Init
+		console.log('Init Components Factory.');
+		this.InitialFactoryValues(ComponentsFactory);
+		this.UpdateProductQuant(ComponentsFactory);
+		this.UpdateAllProductQuant(ComponentsFactory);
+		//Computers Init
+		console.log('Init Computers Factory.');
+		this.InitialFactoryValues(ComputersFactory);
+		this.UpdateProductQuant(ComputersFactory);
+		this.UpdateAllProductQuant(ComputersFactory);
+	},
 
 	InitialFactoryValues : function (Factory)
 	{
+		//Update unlock value
+		Factory.UnlockCostID.innerHTML = "Cost: " + Factory.UnlockCost;
+
 		//Update all values (init run)
 		Factory.ProductivityID.innerHTML = Factory.Productivity + " /process";
-		Factory.WorkersID.innerHTML = Factory.Workers;
+		Factory.WorkersID.innerHTML = Factory.Workers + " /" + Factory.MaxWorkers;
+		if (Factory.ProductRequirementFactory != "NotReq")
+		{
+			Factory.ProductRequirementCostID.innerHTML = "Production Cost: " + Factory.ProductRequirementCost + " " + Factory.ProductRequirementFactory.Product;
+		}
 
 		Factory.UpgradeCostID.innerHTML = Factory.Name + " Upgrade Cost(x1): " + Factory.UpgradeCost;
 		Factory.Upgrade5CostID.innerHTML = Factory.Name + " Upgrade Cost(x5): " + Factory.Upgrade5Cost;
@@ -20,16 +50,13 @@ var GameDisp = {
 	},
 	UpdateFactoryRunningValues : function (Factory)
 	{
-		//Update only values that change over time
-		if (Factory.AutoWork == false)
+		//Update only values that change over time and with upgrades
+		if (Factory.ProductRequirementFactory != "NotReq")
 		{
-			Factory.ProductivityID.innerHTML = Factory.Productivity + " /process";
-		}else if (Factory.AutoWork == true) 
-		{
-			Factory.ProductivityID.innerHTML = Factory.Productivity + " /second";
+			Factory.ProductRequirementCostID.innerHTML = "Production Cost: " + Factory.ProductRequirementCost + " " + Factory.ProductRequirementFactory.Product;
 		}
-		
-		Factory.WorkersID.innerHTML = Factory.Workers;
+		Factory.ProductivityID.innerHTML = Factory.Productivity + " /process";
+		Factory.WorkersID.innerHTML = Factory.Workers + "/" + Factory.MaxWorkers;
 
 	},
 

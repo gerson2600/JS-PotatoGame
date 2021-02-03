@@ -1,16 +1,24 @@
 var ForgeFactory = {
 	Name : "Forge",
-	Product : "Rocks",
+	Product : "Metal",
 	Unlocked : false,
 	UnlockCost : 10,
+	UnlockCostID : document.getElementById('ForgeUnlockCostBtnP'),
 	DivLocked : document.getElementById('ForgeLocked'),
 	DivUnlocked : document.getElementById('ForgeUnlocked'),
 
-	ProductQuant : 12345,
+	ProductQuant : 0,
 	ProductValue : 1,
+	ProductSaleID : document.getElementById('SellForge'),
 	ProductOutputID : document.getElementById('TotalMetalValue'),
 
+	ProductRequirementFactory : MineFactory,
+	ProductRequirementBaseCost : 10,
+	ProductRequirementCost : 10,
+	ProductRequirementCostID: document.getElementById('ForgeProductionCost'),
+
 	IsWorking : false,
+	WorkTime : 2000,
 	ProgressBar : document.getElementById('ForgeProgressBar'),
 
 	Workers : 0,
@@ -30,6 +38,14 @@ var ForgeFactory = {
 	AutoWork : false,
 	AutoWorkCost : 100,
 	AutoWorkCostID : document.getElementById('ForgeAutoWorkH'),
+	StartAutoWork : function () 
+	{
+		console.log("AutoWork initiated for " + this.Name);
+		AutoWorkForgeCycleInterval = setInterval(function()
+		{
+			FactoryInterface.Work(ForgeFactory);
+		}, this.WorkTime);
+	},
 
 	
 	

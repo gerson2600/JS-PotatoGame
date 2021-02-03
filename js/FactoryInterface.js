@@ -17,25 +17,71 @@ var FactoryInterface = {
 
 	Work : function (Factory) 
 	{
-		//Run progress bar and at end, add productivity value to total product
-		if (!Factory.IsWorking)
+		//Check for necessary base ingredient availability
+		if (Factory.ProductRequirementFactory == "NotReq")
 		{
-			Factory.IsWorking = true;
-			Factory.ProgressBar.classList.add('active');
-			Factory.ProgressBar.classList.add('bg-primary');
-			Factory.ProgressBar.classList.add('progress-bar-animated');
-
-			WorkTimeoutFunc = setTimeout(function ()
+			if (!Factory.IsWorking )
 			{
-				Factory.ProgressBar.classList.remove('active');
-				Factory.ProgressBar.classList.remove('bg-primary');
-				Factory.ProgressBar.classList.remove('progress-bar-animated');
+				console.log('Normal Factory Work A')
+				Factory.IsWorking = true;
+
+				Factory.ProgressBar.classList.add('active');
+				Factory.ProgressBar.classList.add('bg-primary');
+				Factory.ProgressBar.classList.add('progress-bar-animated');
+
+				WorkTimeoutFunc = setTimeout(function ()
+				{
+					Factory.ProgressBar.classList.remove('active');
+					Factory.ProgressBar.classList.remove('bg-primary');
+					Factory.ProgressBar.classList.remove('progress-bar-animated');
+
+					Factory.ProductQuant += Factory.Productivity;
+					GameDisp.UpdateProductQuant(Factory);
+					Factory.IsWorking = false;
+					clearTimeout(WorkTimeoutFunc);
+				}, Factory.WorkTime);
+			}else if (Factory.IsWorking && Factory.AutoWork)
+			{
+				console.log('AutoWork A-' + Factory.Name);
 				Factory.ProductQuant += Factory.Productivity;
 				GameDisp.UpdateProductQuant(Factory);
-				Factory.IsWorking = false;
-				clearTimeout(WorkTimeoutFunc);
-			}, 1000);
+			}
+		}else if (Factory.ProductRequirementCost <= Factory.ProductRequirementFactory.ProductQuant)
+		{
+			console.log(Factory.ProductRequirementFactory.ProductQuant);
+			Factory.ProductRequirementFactory.ProductQuant -= Factory.ProductRequirementCost;
+			GameDisp.UpdateProductQuant(Factory.ProductRequirementFactory);
+
+			if (!Factory.IsWorking )
+			{
+				console.log('Normal Factory Work B')
+				Factory.IsWorking = true;
+
+				Factory.ProgressBar.classList.add('active');
+				Factory.ProgressBar.classList.add('bg-primary');
+				Factory.ProgressBar.classList.add('progress-bar-animated');
+
+				WorkTimeoutFunc = setTimeout(function ()
+				{
+					Factory.ProgressBar.classList.remove('active');
+					Factory.ProgressBar.classList.remove('bg-primary');
+					Factory.ProgressBar.classList.remove('progress-bar-animated');
+
+					Factory.ProductQuant += Factory.Productivity;
+					GameDisp.UpdateProductQuant(Factory);
+					Factory.IsWorking = false;
+					clearTimeout(WorkTimeoutFunc);
+				}, Factory.WorkTime);
+			}else if (Factory.IsWorking && Factory.AutoWork)
+			{
+				console.log('AutoWork B-' + Factory.Name);
+				Factory.ProductQuant += Factory.Productivity;
+				GameDisp.UpdateProductQuant(Factory);
+			}
 		}
+		GameDisp.UpdateProductQuant(Factory);
+		//Run progress bar and at end, add productivity value to total product
+		
 	},
 
 	AutoWork : function (Factory)
@@ -51,7 +97,7 @@ var FactoryInterface = {
 
 	ActivateAutoWork : function (Factory)
 	{
-		if (Player.Money >= Factory.AutoWorkCost)
+		if (Player.Money >= Factory.AutoWorkCost && Factory.AutoWork == false)
 		{
 			Player.Money -= Factory.AutoWorkCost;
 			GameDisp.UpdatePlayerMoney();
@@ -69,6 +115,7 @@ var FactoryInterface = {
 	{
 		//Update productivity values from workers
 		Factory.Productivity = Factory.Workers * Factory.WorkerUnitProductivity;
+		Factory.ProductRequirementCost = Factory.Productivity * Factory.ProductRequirementBaseCost;
 
 	},
 
@@ -92,7 +139,7 @@ var FactoryInterface = {
 	Upgrade5 : function (Factory)
 	{
 		//Check if has money to upgrade and if max level isn't/wont be reached
-		if (Player.Money >= Factory.Upgrade5Cost && Factory.Workers+5 < Factory.MaxWorkers)
+		if (Player.Money >= Factory.Upgrade5Cost && Factory.Workers+5 <= Factory.MaxWorkers)
 		{
 			Factory.Workers += 5;
 			Player.Money = Player.Money - (Factory.UpgradeCost*5);

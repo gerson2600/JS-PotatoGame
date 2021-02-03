@@ -96,7 +96,11 @@
 						<div class="tab-pane TabBox container-fluid active" id="MineTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="MineLocked">
-									<button onclick="FactoryInterface.Unlock(MineFactory);">Unlock Mine</button>
+									<br>
+									<button class="btn btn-block btn-primary" onclick="FactoryInterface.Unlock(MineFactory);">
+										<p>Unlock Mine</p>
+										<p class="m-0" id="MineUnlockCostBtnP">Cost: X</p>
+									</button>
 								</div>
 							</div>
 							<div class="HiddenRow" id="MineUnlocked">
@@ -155,7 +159,7 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(MineFactory);">Sell Products</button>
 										</div>
 										<div class="col-6">
-											<h5 id="SellRocks">Value of Rocks: 1</h5>
+											<h5 id="SellMine">Value of Rocks: 1</h5>
 										</div>
 									</div>
 								</div>
@@ -166,7 +170,11 @@
 						<div class="tab-pane TabBox container-fluid fade" id="ForgeTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="ForgeLocked">
-									<button onclick="FactoryInterface.Unlock(ForgeFactory);">Unlock Forge</button>
+									<br>
+									<button class="btn btn-block btn-primary" onclick="FactoryInterface.Unlock(ForgeFactory);">
+										<p>Unlock Forge</p>
+										<p class="m-0" id="ForgeUnlockCostBtnP">Cost: X</p>
+									</button>
 								</div>
 							</div>
 							<div class="HiddenRow" id="ForgeUnlocked">
@@ -176,7 +184,7 @@
 										<h3>Forge Productivity: </h3>
 									</div>
 									<div class="col-4">
-										<h3 id="Forge*ProductivityValue">0</h3>
+										<h3 id="ForgeProductivityValue">0</h3>
 									</div>
 								</div>
 								<div class="row">
@@ -200,6 +208,9 @@
 										<div class="col-4 p-1">
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeWorkBtn" onclick="FactoryInterface.Work(ForgeFactory);">Work</button>
 										</div>
+										<div class="col-6 m-0">
+											<h5 id="ForgeProductionCost">Production Cost: X</h5>
+										</div>
 									</div>
 									<div class="row">
 										<div class="col-2 p-1">
@@ -209,8 +220,8 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeUpgrade5Btn" onclick="FactoryInterface.Upgrade5(ForgeFactory);">Upgrade Forge (x5)</button>
 										</div>
 										<div class="col-6 m-0">
-											<h5 class="m-0">Forge Upgrade Cost(x1): 0</h5>
-											<h5 class="m-0">Forge Upgrade Cost(x5): 0</h5>
+											<h5 class="m-0" id="ForgeUpgrade1H">Forge Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0" id="ForgeUpgrade5H">Forge Upgrade Cost(x5): 0</h5>
 										</div>
 									</div>
 									<div class="row">
@@ -218,7 +229,7 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ForgeAutoBtn" onclick="FactoryInterface.ActivateAutoWork(ForgeFactory);">Auto-Forge</button>
 										</div>
 										<div class="col-6">
-											<h5>Auto-Forge Upgrade Cost: 0</h5>
+											<h5 id="ForgeAutoWorkH">Auto-Forge Upgrade Cost: 0</h5>
 										</div>
 									</div>
 									<div class="row">
@@ -226,7 +237,7 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ForgeFactory);">Sell Products</button>
 										</div>
 										<div class="col-6">
-											<h5 id="SellMetal">Value of Metal: 1</h5>
+											<h5 id="SellForge">Value of Metal: 1</h5>
 										</div>
 									</div>
 								</div>
@@ -237,7 +248,11 @@
 						<div class="tab-pane TabBox container-fluid fade" id="ComponentsTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="ComponentsLocked">
-									<button onclick="FactoryInterface.Unlock(ComponentsFactory);">Unlock Components</button>
+									<br>
+									<button class="btn btn-block btn-primary" onclick="FactoryInterface.Unlock(ComponentsFactory);">
+										<p>Unlock Components</p>
+										<p class="m-0" id="ComponentsUnlockCostBtnP">Cost: X</p>
+									</button>
 								</div>
 							</div>
 							<div class="HiddenRow" id="ComponentsUnlocked">
@@ -270,6 +285,9 @@
 										<div class="col-4 p-1">
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsWorkBtn" onclick="FactoryInterface.Work(ComponentsFactory);">Work</button>
 										</div>
+										<div class="col-6 m-0">
+											<h5 id="ComponentsProductionCost">Production Cost: X</h5>
+										</div>
 									</div>
 									<div class="row">
 										<div class="col-2 p-1">
@@ -279,8 +297,8 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsUpgrade5Btn" onclick="FactoryInterface.Upgrade5(ComponentsFactory);">Upgrade Components (x5)</button>
 										</div>
 										<div class="col-6 m-0">
-											<h5 class="m-0">Components Upgrade Cost(x1): 0</h5>
-											<h5 class="m-0">Components Upgrade Cost(x5): 0</h5>
+											<h5 class="m-0" id="ComponentsUpgrade1H">Components Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0" id="ComponentsUpgrade5H">Components Upgrade Cost(x5): 0</h5>
 										</div>
 									</div>
 									<div class="row">
@@ -288,7 +306,7 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComponentsAutoBtn" onclick="FactoryInterface.ActivateAutoWork(ComponentsFactory);">Auto-Components</button>
 										</div>
 										<div class="col-6">
-											<h5>Auto-Components Upgrade Cost: 0</h5>
+											<h5 id="ComponentsAutoWorkH">Auto-Components Upgrade Cost: 0</h5>
 										</div>
 									</div>
 									<div class="row">
@@ -296,7 +314,7 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" onclick="FactoryInterface.SellAllProduct(ComponentsFactory);">Sell Products</button>
 										</div>
 										<div class="col-6">
-											<h5 id="SellParts">Value of Parts: 1</h5>
+											<h5 id="SellComponents">Value of Parts: 1</h5>
 										</div>
 									</div>
 								</div>
@@ -307,7 +325,11 @@
 						<div class="tab-pane TabBox container-fluid fade" id="ComputersTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="ComputersLocked">
-									<button onclick="FactoryInterface.Unlock(ComputersFactory);">Unlock Computers</button>
+									<br>
+									<button class="btn btn-block btn-primary" onclick="FactoryInterface.Unlock(ComputersFactory);">
+										<p>Unlock Computers</p>
+										<p class="m-0" id="ComputersUnlockCostBtnP">Cost: X</p>
+									</button>
 								</div>
 							</div>
 							<div class="HiddenRow" id="ComputersUnlocked">
@@ -340,6 +362,9 @@
 										<div class="col-4 p-1">
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersWorkBtn" onclick="FactoryInterface.Work(ComputersFactory);">Work</button>
 										</div>
+										<div class="col-6 m-0">
+											<h5 id="ComputersProductionCost">Production Cost: X</h5>
+										</div>
 									</div>
 									<div class="row">
 										<div class="col-2 p-1">
@@ -349,8 +374,8 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersUpgrade5Btn" onclick="FactoryInterface.Upgrade5(ComputersFactory);">Upgrade Computers (x5)</button>
 										</div>
 										<div class="col-6 m-0">
-											<h5 class="m-0">Computers Upgrade Cost(x1): 0</h5>
-											<h5 class="m-0">Computers Upgrade Cost(x5): 0</h5>
+											<h5 class="m-0" id="ComputersUpgrade1H">Computers Upgrade Cost(x1): 0</h5>
+											<h5 class="m-0" id="ComputersUpgrade5H">Computers Upgrade Cost(x5): 0</h5>
 										</div>
 									</div>
 									<div class="row">
@@ -358,7 +383,7 @@
 											<button type="button" class="btn btn-primary btn-block UpgradeWorkBtns" id="ComputersAutoBtn"  onclick="FactoryInterface.ActivateAutoWork(ComputersFactory);">Auto-Computers</button>
 										</div>
 										<div class="col-6">
-											<h5>Auto-Computers Upgrade Cost: 0</h5>
+											<h5 id="ComputersAutoWorkH">Auto-Computers Upgrade Cost: 0</h5>
 										</div>
 									</div>
 									<div class="row">

@@ -1,0 +1,19 @@
+﻿StartValTable,Factory >,,,
+Values \/,Mine,Forge,Components,Computers
+Product,Rocks,Metal,Parts,Computers
+Unlocked,FALSE,FALSE,FALSE,FALSE
+UnlockCost,10,2000,50000,250000
+ProductQuant,100,0,0,0
+ProductValue,1,15,400,25000
+RequirementFactory,FALSE,Mine,Forge,Components
+ReqBaseCost,0,10,20,50
+ReqCost,0,10,20,50
+WorkTime (ms),1000,2000,3000,5000
+Workers,0,0,0,0
+WorkerUnitProductivity,15,5,3,1
+MaxWorkers,100,100,100,100
+Productivity,1,1,1,1
+UpgradeCost(1),20,100,1500,30000
+UpgradeCost(5),100,500,7500,150000
+AutoWork,FALSE,FALSE,FALSE,FALSE
+AutoWorkCost,1000,5000,75000,1500000

@@ -2,17 +2,23 @@ var MineFactory = {
 	Name : "Mine",
 	Product : "Rocks",
 	Unlocked : false,
-	UnlockCost : 10,
+	UnlockCost : 100,
+	UnlockCostID : document.getElementById('MineUnlockCostBtnP'),
 	DivLocked : document.getElementById('MineLocked'),
 	DivUnlocked : document.getElementById('MineUnlocked'),
 
-
-	ProductQuant : 12345,
+	ProductQuant : 1000,
 	ProductValue : 1,
-	ProductSaleID : document.getElementById('SellRocks'),
+	ProductSaleID : document.getElementById('SellMine'),
 	ProductOutputID : document.getElementById('TotalRocksValue'),
 
+	ProductRequirementFactory : "NotReq",
+	ProductRequirementBaseCost : 0,
+	ProductRequirementCost : 0,
+	ProductRequirementCostID: document.getElementById('MineProductionCost'),
+
 	IsWorking : false,
+	WorkTime : 1000,
 	ProgressBar : document.getElementById('MineProgressBar'),
 
 	Workers : 0,
@@ -35,10 +41,10 @@ var MineFactory = {
 	StartAutoWork : function () 
 	{
 		console.log("AutoWork initiated for " + this.Name);
-		AutoWorkCycleInterval = setInterval(function()
+		AutoWorkMineCycleInterval = setInterval(function()
 		{
-			FactoryInterface.AutoWork(MineFactory);
-		}, 1000);
+			FactoryInterface.Work(MineFactory);
+		}, this.WorkTime);
 	},
 	
 
