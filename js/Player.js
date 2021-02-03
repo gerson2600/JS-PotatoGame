@@ -1,6 +1,6 @@
 var Player = {
 	Name : "Player1",
-	Money : 10000,
+	Money : 100,
 	MoneyID : document.getElementById('PlayerMoneyH'),
 
 }

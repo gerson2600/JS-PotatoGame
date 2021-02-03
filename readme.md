@@ -24,9 +24,8 @@
 
 #
 ### Init Value Table
-| StartValTable             | Factory >     |           |               |               |
+| Value // Factory          | Mine          | Forge     | Components    | Computers     |
 |------------------------   |-----------    |-------    |------------   |------------   |
-| Values \/                 | Mine          | Forge     | Components    | Computers     |
 | Product                   | Rocks         | Metal     | Parts         | Computers     |
 | Unlocked                  | FALSE         | FALSE     | FALSE         | FALSE         |
 | UnlockCost                | 10            | 2000      | 50000         | 250000        |

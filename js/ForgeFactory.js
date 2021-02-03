@@ -2,13 +2,13 @@ var ForgeFactory = {
 	Name : "Forge",
 	Product : "Metal",
 	Unlocked : false,
-	UnlockCost : 10,
+	UnlockCost : 2000,
 	UnlockCostID : document.getElementById('ForgeUnlockCostBtnP'),
 	DivLocked : document.getElementById('ForgeLocked'),
 	DivUnlocked : document.getElementById('ForgeUnlocked'),
 
 	ProductQuant : 0,
-	ProductValue : 1,
+	ProductValue : 15,
 	ProductSaleID : document.getElementById('SellForge'),
 	ProductOutputID : document.getElementById('TotalMetalValue'),
 
@@ -22,21 +22,21 @@ var ForgeFactory = {
 	ProgressBar : document.getElementById('ForgeProgressBar'),
 
 	Workers : 0,
-	WorkerUnitProductivity : 100,
+	WorkerUnitProductivity : 5,
 	MaxWorkers : 100,
 	WorkersID : document.getElementById('ForgeWorkerValue'),
 
 	Productivity : 1,
 	ProductivityID : document.getElementById('ForgeProductivityValue'),
 
-	UpgradeCost : 10,
+	UpgradeCost : 100,
 	UpgradeCostID : document.getElementById('ForgeUpgrade1H'),
 
-	Upgrade5Cost : 50,
+	Upgrade5Cost : 500,
 	Upgrade5CostID : document.getElementById('ForgeUpgrade5H'),
 
 	AutoWork : false,
-	AutoWorkCost : 100,
+	AutoWorkCost : 5000,
 	AutoWorkCostID : document.getElementById('ForgeAutoWorkH'),
 	StartAutoWork : function () 
 	{
