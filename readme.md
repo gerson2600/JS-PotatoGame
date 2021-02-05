@@ -12,7 +12,7 @@
     - [x] Add Factory Unlock Mechanism/Logic
         - [x] Unlock Cost 
     - [x] Create real values for factory objects
-        - [ ] Adjust values umtil desired gameplay is achieved
+        - [ ] Adjust values until desired gameplay is achieved
     - [ ] Add easteregg? o.O
 
 # Important
