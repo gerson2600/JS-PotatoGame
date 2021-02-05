@@ -11,7 +11,8 @@
     - [x] Add other factories/make run
     - [x] Add Factory Unlock Mechanism/Logic
         - [x] Unlock Cost 
-    - [ ] Create real values for factory objects
+    - [x] Create real values for factory objects
+        - [ ] Adjust values umtil desired gameplay is achieved
     - [ ] Add easteregg? o.O
 
 # Important
@@ -19,8 +20,8 @@
 - [ ] Add The golden potato
 
 ### End Changes (these can be the last changes and "should" be quick and easy to do)
-- [ ] Start in Home Tab
-- [ ] Make up a name for this Scheiße
+- [x] Start in Home Tab
+- [ ] Make up a name for this ~~Scheiße~~ Wonderful Game
 
 #
 ### Init Value Table
@@ -43,3 +44,7 @@
 | UpgradeCost(5)            | 100           | 500       | 7500          | 150000        |
 | AutoWork                  | FALSE         | FALSE     | FALSE         | FALSE         |
 | AutoWorkCost              | 1000          | 5000      | 75000         | 1500000       |
+
+### Bug List/Changes to-do
+- [x] Pressing work several times and req products wasting away with only 1 work process being done
+- [x] Money Stackoverflow because JS has a tiny number size (probably solved)

@@ -20,6 +20,11 @@ var GameApp = {
 	{
 		Player.Money += 100000;
 		GameDisp.UpdatePlayerMoney();
+	},
+
+	SaveGame : function ()
+	{
+		
 	}
 	
 

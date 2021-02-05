@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/stylesheetcf.css">
 		<title>Game</title>
 	</head>
-	<body>
+	<body onload="GameApp.RunFirstTime();">
 		<div class="container-fluid">
 			<!-- Top bar -->
 			<div id="TopBar">
@@ -22,7 +22,6 @@
 						<h5 id="PlayerMoneyH">Money: x</h5>
 					</div>
 					<div class="col-6">
-						<button onclick="GameApp.RunFirstTime();">InitValues</button>
 						<button onclick="GameApp.GiveLotsOfMoney();">Give 100,000</button>
 						Buttons go here and here
 					</div>
@@ -49,13 +48,26 @@
 			</div>
 			
 			
-			<!-- GameScreen, might be canvas -->
-			<div class="row">
-				<div class="col-12">
-					<div id="GameArea">
-						asdfasdf
-					</div>
+			<!-- GameScreen, might be canvas,
+			might be just images being activated when the respective factory gets unlocked -->
+			<div class="row" id="GameArea">
+				<div class="col-3" id="MineFactoryLockedImg"></div>
+				<div class="col-3 HiddenElement" id="MineFactoryUnlockedImg">
+					<img src="img/factory1.png" class="p-3 img-fluid d-block" alt="">
 				</div>
+				<div class="col-3" id="ForgeFactoryLockedImg"></div>
+				<div class="col-3 HiddenElement" id="ForgeFactoryUnlockedImg">
+					<img src="img/factory2.png" class="p-3 img-fluid d-block" alt="">
+				</div>
+				<div class="col-3" id="ComponentsFactoryLockedImg"></div>
+				<div class="col-3 HiddenElement" id="ComponentsFactoryUnlockedImg">
+					<img src="img/factory3.png" class="p-3 img-fluid d-block"  alt="">
+				</div>
+				<div class="col-3" id="ComputersFactoryLockedImg"></div>
+				<div class="col-3 HiddenElement" id="ComputersFactoryUnlockedImg">
+					<img src="img/factory2.png" class="p-3 img-fluid d-block" alt="">
+				</div>
+
 			</div>
 			<!-- Game Tabs and functionality -->
 			<div class="row">
@@ -63,10 +75,10 @@
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="#HomeTab">Home</a>
+							<a class="nav-link active" data-toggle="tab" href="#HomeTab">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="#MineTab">Mine</a>
+							<a class="nav-link" data-toggle="tab" href="#MineTab">Mine</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" href="#ForgeTab">Forge</a>
@@ -83,18 +95,23 @@
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content">
-						<div class="tab-pane TabBox container-fluid fade" id="HomeTab">
-							<div class="row" id="HomeContent1">
-								Home Content Pre-unlock
-								<button onclick="GameDisp.ToggleHomeUnlock();">Button to Unlock</button>
-							</div>
-							<div class="row HiddenRow" id="HomeContent2">
-								Home Content Unlocked
+						<!-- HOME -->
+						<div class="tab-pane TabBox container-fluid active" id="HomeTab">
+							<div class="row">
+								<div class="col-6">
+									<h3>How to play:</h3>
+									<p>Buy factories and progress until you can buy the golden potato.</p>
+									<p>On every factory start off by manually working and go on to buying workers to make your factory more productive.</p>
+									<p>The final stage should always be to make it auto-work for you.</p>
+									<p>The Mine has no requirements to run, but all others need something from the previous factory to run.</p>
+									<p>Good Luck and Have Fun!</p>
+									
+								</div>
 							</div>
 							
 						</div>
 						<!-- MINE -->
-						<div class="tab-pane TabBox container-fluid active" id="MineTab">
+						<div class="tab-pane TabBox container-fluid fade" id="MineTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="MineLocked">
 									<br>
@@ -104,7 +121,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="HiddenRow" id="MineUnlocked">
+							<div class="HiddenElement" id="MineUnlocked">
 								<div class="row">
 									<div class="col-4">
 										<h3>Mine Productivity: </h3>
@@ -178,7 +195,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="HiddenRow" id="ForgeUnlocked">
+							<div class="HiddenElement" id="ForgeUnlocked">
 								<!-- Forge goes here-->
 								<div class="row">
 									<div class="col-4">
@@ -256,7 +273,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="HiddenRow" id="ComponentsUnlocked">
+							<div class="HiddenElement" id="ComponentsUnlocked">
 								<div class="row">
 									<div class="col-4">
 										<h3>Components Productivity: </h3>
@@ -333,7 +350,7 @@
 									</button>
 								</div>
 							</div>
-							<div class="HiddenRow" id="ComputersUnlocked">
+							<div class="HiddenElement" id="ComputersUnlocked">
 								<div class="row">
 									<div class="col-4">
 										<h3>Computers Productivity: </h3>
@@ -407,14 +424,6 @@
 				</div>
 			</div>
 			<!-- Bottom Bar -->
-			<div class="row">
-				<div class="col-12">
-					<div id="BotBar">
-						
-					</div>
-					
-				</div>
-			</div>
 		</div>
 		<!-- Script Loads -->
 		<script src="js/Player.js"></script>

@@ -6,6 +6,9 @@ var ForgeFactory = {
 	UnlockCostID : document.getElementById('ForgeUnlockCostBtnP'),
 	DivLocked : document.getElementById('ForgeLocked'),
 	DivUnlocked : document.getElementById('ForgeUnlocked'),
+	FactoryImgLockedID : document.getElementById('ForgeFactoryLockedImg'),
+	FactoryImgUnlockedID : document.getElementById('ForgeFactoryUnlockedImg'),
+	
 
 	ProductQuant : 0,
 	ProductValue : 15,

@@ -6,6 +6,8 @@ var ComputersFactory = {
 	UnlockCostID : document.getElementById('ComputersUnlockCostBtnP'),
 	DivLocked : document.getElementById('ComputersLocked'),
 	DivUnlocked : document.getElementById('ComputersUnlocked'),
+	FactoryImgLockedID : document.getElementById('ComputersFactoryLockedImg'),
+	FactoryImgUnlockedID : document.getElementById('ComputersFactoryUnlockedImg'),
 
 	ProductQuant : 0,
 	ProductValue : 25000,

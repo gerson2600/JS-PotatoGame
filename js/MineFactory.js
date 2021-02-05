@@ -6,6 +6,8 @@ var MineFactory = {
 	UnlockCostID : document.getElementById('MineUnlockCostBtnP'),
 	DivLocked : document.getElementById('MineLocked'),
 	DivUnlocked : document.getElementById('MineUnlocked'),
+	FactoryImgLockedID : document.getElementById('MineFactoryLockedImg'),
+	FactoryImgUnlockedID : document.getElementById('MineFactoryUnlockedImg'),
 
 	ProductQuant : 100,
 	ProductValue : 1,

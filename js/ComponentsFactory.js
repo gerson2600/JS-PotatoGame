@@ -6,6 +6,8 @@ var ComponentsFactory = {
 	UnlockCostID : document.getElementById('ComponentsUnlockCostBtnP'),
 	DivLocked : document.getElementById('ComponentsLocked'),
 	DivUnlocked : document.getElementById('ComponentsUnlocked'),
+	FactoryImgLockedID : document.getElementById('ComponentsFactoryLockedImg'),
+	FactoryImgUnlockedID : document.getElementById('ComponentsFactoryUnlockedImg'),
 
 	ProductQuant : 0,
 	ProductValue : 400,

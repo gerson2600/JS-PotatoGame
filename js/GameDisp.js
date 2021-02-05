@@ -80,14 +80,10 @@ var GameDisp = {
 
 	UnlockFactory : function (Factory)
 	{
-		Factory.DivLocked.classList.add('HiddenRow');
-		Factory.DivUnlocked.classList.remove('HiddenRow');
-	},
-
-	ToggleHomeUnlock : function ()
-	{
-		document.getElementById('HomeContent1').classList.add('HiddenRow');
-		document.getElementById('HomeContent2').classList.remove('HiddenRow');
+		Factory.DivLocked.classList.add('HiddenElement');
+		Factory.DivUnlocked.classList.remove('HiddenElement');
+		Factory.FactoryImgLockedID.classList.add('HiddenElement');
+		Factory.FactoryImgUnlockedID.classList.remove('HiddenElement');
 	},
 
 }
