@@ -172,6 +172,7 @@ var FactoryInterface = {
 	{
 		//Check for factory enabled at every factory and then sell all products, one at a time
 		//Update player money before leaving func
+		//Unecessary function as products get consumed by the previous level anyway
 	}
 
 

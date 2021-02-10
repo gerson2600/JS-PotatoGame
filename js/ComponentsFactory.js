@@ -47,7 +47,7 @@ var ComponentsFactory = {
 		{
 			FactoryInterface.Work(ComponentsFactory);
 		}, this.WorkTime);
-	},
+	}
 	
 	
 

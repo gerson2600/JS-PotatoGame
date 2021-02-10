@@ -18,8 +18,21 @@ var GameApp = {
 
 	GiveLotsOfMoney : function ()
 	{
-		Player.Money += 100000;
+		Player.Money += 10000;
 		GameDisp.UpdatePlayerMoney();
+	},
+
+	UnlockPotato : function ()
+	{
+		if (Player.Money >= 10000000)
+		{
+			Player.Money -= 10000000;
+			GameDisp.UpdatePlayerMoney();
+			document.getElementById('PotatoLocked').classList.add('HiddenElement');
+			document.getElementById('PotatoUnlocked').classList.remove('HiddenElement');;
+		}
+
+
 	},
 
 	SaveGame : function ()

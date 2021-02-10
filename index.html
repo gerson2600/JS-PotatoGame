@@ -8,22 +8,22 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="css/stylesheetcf.css">
-		<title>Game</title>
+		<link rel="icon" href="img/iconRip.PNG" type="image/gif" sizes="16x16">
+		<title>Potato.Inc</title>
 	</head>
 	<body onload="GameApp.RunFirstTime();">
 		<div class="container-fluid">
 			<!-- Top bar -->
-			<div id="TopBar">
+			<div class="bg-white mt-2" id="TopBar">
 				<div class="row">
 					<div class="col-3">
-						<h4>This is a Game</h4>
+						<h4>Potato Factory.Inc</h4>
 					</div>
 					<div class="col-3">
 						<h5 id="PlayerMoneyH">Money: x</h5>
 					</div>
 					<div class="col-6">
-						<button onclick="GameApp.GiveLotsOfMoney();">Give 100,000</button>
-						Buttons go here and here
+						<button onclick="GameApp.GiveLotsOfMoney();">Cheat Button</button>
 					</div>
 				</div>
 				<div class="row">
@@ -74,29 +74,29 @@
 				<div class="col-12">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs">
-						<li class="nav-item">
+						<li class="nav-item bg-white rounded-top">
 							<a class="nav-link active" data-toggle="tab" href="#HomeTab">Home</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item bg-white rounded-top">
 							<a class="nav-link" data-toggle="tab" href="#MineTab">Mine</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item bg-white rounded-top">
 							<a class="nav-link" data-toggle="tab" href="#ForgeTab">Forge</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item bg-white rounded-top">
 							<a class="nav-link" data-toggle="tab" href="#ComponentsTab">Components</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item bg-white rounded-top">
 							<a class="nav-link" data-toggle="tab" href="#ComputersTab">Computers</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item bg-white rounded-top">
 							<a class="nav-link" data-toggle="tab" href="#PotatoTab">Potato</a>
 						</li>
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<!-- HOME -->
-						<div class="tab-pane TabBox container-fluid active" id="HomeTab">
+						<div class="tab-pane TabBox container-fluid bg-white rounded active" id="HomeTab">
 							<div class="row">
 								<div class="col-6">
 									<h3>How to play:</h3>
@@ -111,7 +111,7 @@
 							
 						</div>
 						<!-- MINE -->
-						<div class="tab-pane TabBox container-fluid fade" id="MineTab">
+						<div class="tab-pane TabBox container-fluid bg-white rounded fade" id="MineTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="MineLocked">
 									<br>
@@ -185,7 +185,7 @@
 							
 						</div>
 						<!-- FORGE -->
-						<div class="tab-pane TabBox container-fluid fade" id="ForgeTab">
+						<div class="tab-pane TabBox container-fluid bg-white rounded fade" id="ForgeTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="ForgeLocked">
 									<br>
@@ -263,7 +263,7 @@
 							
 						</div>
 						<!-- COMPONENTS -->
-						<div class="tab-pane TabBox container-fluid fade" id="ComponentsTab">
+						<div class="tab-pane TabBox container-fluid bg-white rounded fade" id="ComponentsTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="ComponentsLocked">
 									<br>
@@ -340,7 +340,7 @@
 							
 						</div>
 						<!-- COMPUTERS -->
-						<div class="tab-pane TabBox container-fluid fade" id="ComputersTab">
+						<div class="tab-pane TabBox container-fluid bg-white rounded fade" id="ComputersTab">
 							<div class="row">
 								<div class="col-6 offset-3" id="ComputersLocked">
 									<br>
@@ -417,8 +417,26 @@
 							
 						</div>
 						<!-- GOLDEN POTATO -->
-						<div class="tab-pane TabBox container-fluid fade" id="PotatoTab">
+						<div class="tab-pane TabBox container-fluid bg-white rounded fade" id="PotatoTab">
 							<!-- Get the Golden Potato -->
+							<div class="row">
+								<div class="col-6 offset-3" id="PotatoLocked">
+									<br>
+									<button class="btn btn-block btn-primary" onclick="GameApp.UnlockPotato();">
+										<p>Buy The Potato</p>
+										<p class="m-0" id="PotatoUnlockCostBtnP">Cost: 10,000,000</p>
+									</button>
+								</div>
+							</div>
+							<div class="HiddenElement" id="PotatoUnlocked">
+								<div class="row">
+									<div class="col-8 offset-2">
+										<img src="img/potato.PNG" class="img-fluid d-block mx-auto h-75" alt="">
+										<h4 class="text-center">Congratulations!</h4>
+										<h4 class="text-center">You can now use this new technology to play CS:GO</h4>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

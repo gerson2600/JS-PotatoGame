@@ -17,11 +17,14 @@
 
 # Important
 - [x] Product RequirementCost increment with productivity
-- [ ] Add The golden potato
+- [x] Invert Factory.png colors and add alpha channel
+- [x] Crop background pattern
+- [x] Add The golden potato
+- [x] Remove commas at end of objects
 
 ### End Changes (these can be the last changes and "should" be quick and easy to do)
 - [x] Start in Home Tab
-- [ ] Make up a name for this ~~Scheiße~~ Wonderful Game
+- [x] Make up a name for this ~~Scheiße~~ Wonderful Game
 
 #
 ### Init Value Table

@@ -48,7 +48,7 @@ var ForgeFactory = {
 		{
 			FactoryInterface.Work(ForgeFactory);
 		}, this.WorkTime);
-	},
+	}
 
 	
 	
