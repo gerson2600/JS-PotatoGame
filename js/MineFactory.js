@@ -24,8 +24,8 @@ var MineFactory = {
 	ProgressBar : document.getElementById('MineProgressBar'),
 
 	Workers : 0,
-	WorkerUnitProductivity : 15,
-	MaxWorkers : 100,
+	WorkerUnitProductivity : 20,
+	MaxWorkers : 500,
 	WorkersID : document.getElementById('MineWorkerValue'),
 
 	Productivity : 1,

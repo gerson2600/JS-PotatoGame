@@ -25,8 +25,8 @@ var ForgeFactory = {
 	ProgressBar : document.getElementById('ForgeProgressBar'),
 
 	Workers : 0,
-	WorkerUnitProductivity : 5,
-	MaxWorkers : 100,
+	WorkerUnitProductivity : 10,
+	MaxWorkers : 400,
 	WorkersID : document.getElementById('ForgeWorkerValue'),
 
 	Productivity : 1,

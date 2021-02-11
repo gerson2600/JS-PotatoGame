@@ -18,8 +18,9 @@ var GameApp = {
 
 	GiveLotsOfMoney : function ()
 	{
-		Player.Money += 10000;
+		Player.Money += 5000000;
 		GameDisp.UpdatePlayerMoney();
+		document.getElementById('CheatBtn').classList.add('HiddenElement');
 	},
 
 	UnlockPotato : function ()

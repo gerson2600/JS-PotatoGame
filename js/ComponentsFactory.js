@@ -15,8 +15,8 @@ var ComponentsFactory = {
 	ProductOutputID : document.getElementById('TotalPartsValue'),
 
 	ProductRequirementFactory : ForgeFactory,
-	ProductRequirementBaseCost : 20,
-	ProductRequirementCost : 20,
+	ProductRequirementBaseCost : 12,
+	ProductRequirementCost : 12,
 	ProductRequirementCostID: document.getElementById('ComponentsProductionCost'),
 
 	IsWorking : false,
@@ -24,8 +24,8 @@ var ComponentsFactory = {
 	ProgressBar : document.getElementById('ComponentsProgressBar'),
 
 	Workers : 0,
-	WorkerUnitProductivity : 3,
-	MaxWorkers : 100,
+	WorkerUnitProductivity : 8,
+	MaxWorkers : 200,
 	WorkersID : document.getElementById('ComponentsWorkerValue'),
 
 	Productivity : 1,

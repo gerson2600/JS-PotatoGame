@@ -12,8 +12,8 @@
     - [x] Add Factory Unlock Mechanism/Logic
         - [x] Unlock Cost 
     - [x] Create real values for factory objects
-        - [ ] Adjust values until desired gameplay is achieved
-    - [ ] Add easteregg? o.O
+        - [x] Adjust values until desired gameplay is achieved
+    - [x] Add easteregg? o.O NOPE
 
 # Important
 - [x] Product RequirementCost increment with productivity
@@ -36,12 +36,12 @@
 | ProductQuant              | 100           | 0         | 0             | 0             |
 | ProductValue              | 1             | 15        | 400           | 25000         |
 | RequirementFactory        | FALSE         | Mine      | Forge         | Components    |
-| ReqBaseCost               | 0             | 10        | 20            | 50            |
-| ReqCost                   | 0             | 10        | 20            | 50            |
+| ReqBaseCost               | 0             | 10        | 12            | 15            |
+| ReqCost                   | 0             | 10        | 12            | 15            |
 | WorkTime (ms)             | 1000          | 2000      | 3000          | 5000          |
 | Workers                   | 0             | 0         | 0             | 0             |
-| WorkerUnitProductivity    | 15            | 5         | 3             | 1             |
-| MaxWorkers                | 100           | 100       | 100           | 100           |
+| WorkerUnitProductivity    | 20            | 10        | 8             | 3             |
+| MaxWorkers                | 500           | 400       | 200           | 100           |
 | Productivity              | 1             | 1         | 1             | 1             |
 | UpgradeCost(1)            | 20            | 100       | 1500          | 30000         |
 | UpgradeCost(5)            | 100           | 500       | 7500          | 150000        |

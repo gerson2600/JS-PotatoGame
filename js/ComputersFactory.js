@@ -15,8 +15,8 @@ var ComputersFactory = {
 	ProductOutputID : document.getElementById('TotalComputersValue'),
 
 	ProductRequirementFactory : ComponentsFactory,
-	ProductRequirementBaseCost : 50,
-	ProductRequirementCost : 50,
+	ProductRequirementBaseCost : 15,
+	ProductRequirementCost : 15,
 	ProductRequirementCostID: document.getElementById('ComputersProductionCost'),
 
 	IsWorking : false,
@@ -24,7 +24,7 @@ var ComputersFactory = {
 	ProgressBar : document.getElementById('ComputersProgressBar'),
 
 	Workers : 0,
-	WorkerUnitProductivity : 1,
+	WorkerUnitProductivity : 3,
 	MaxWorkers : 100,
 	WorkersID : document.getElementById('ComputersWorkerValue'),
 
